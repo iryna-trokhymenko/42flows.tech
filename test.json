@@ -1,0 +1,562 @@
+[
+    {
+        "id": "be761c2a05f0c96a",
+        "type": "tab",
+        "label": "Create Alias",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "89c232fd84c1a4fe",
+        "type": "tab",
+        "label": "Поток 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4a32fe067268a800",
+        "type": "tab",
+        "label": "Поток 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1d158bec07e28532",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "92ccc26ab07276cf",
+        "type": "ui_tab",
+        "name": "Закладка 1",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "43a72dc599b9a46c",
+        "type": "ui_tab",
+        "name": "Закладка 2",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5bf3b579c2f657b3",
+        "type": "ui_group",
+        "name": "Група 1",
+        "tab": "92ccc26ab07276cf",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a195e9539f04d565",
+        "type": "telegram bot",
+        "botname": "WaiottestBot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "d3e31480d56d364a",
+        "type": "telegram bot",
+        "botname": "Trokhymenkobot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "f6ffb56c75cc3e97",
+        "type": "http request",
+        "z": "be761c2a05f0c96a",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://sandbox.api.visa.com/visaaliasdirectory/v1/manage/createalias",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 410,
+        "y": 60,
+        "wires": [
+            [
+                "9f1f07691dd4e871",
+                "692c2b4b98193a38"
+            ]
+        ]
+    },
+    {
+        "id": "9424bf8698874f01",
+        "type": "http in",
+        "z": "be761c2a05f0c96a",
+        "name": "",
+        "url": "create-alias",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 140,
+        "wires": [
+            [
+                "f6ffb56c75cc3e97"
+            ]
+        ]
+    },
+    {
+        "id": "692c2b4b98193a38",
+        "type": "debug",
+        "z": "be761c2a05f0c96a",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "9f1f07691dd4e871",
+        "type": "http response",
+        "z": "be761c2a05f0c96a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 670,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "8c95bcad88ac71cd",
+        "type": "comment",
+        "z": "be761c2a05f0c96a",
+        "name": "validation on visa side",
+        "info": "validation on visa side\n",
+        "x": 180,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5e4b740ec9089bc8",
+        "type": "http in",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "url": "p2p",
+        "method": "post",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 220,
+        "y": 80,
+        "wires": [
+            [
+                "97a12b8dd30f07db"
+            ]
+        ]
+    },
+    {
+        "id": "97a12b8dd30f07db",
+        "type": "http request",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://sandbox.api.visa.com/visaaliasdirectory/v2/resolve",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 470,
+        "y": 380,
+        "wires": [
+            [
+                "1a581a3db668bd4d"
+            ]
+        ]
+    },
+    {
+        "id": "1a581a3db668bd4d",
+        "type": "switch",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "property": "payload.responseStatus.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 790,
+        "y": 800,
+        "wires": [
+            [
+                "df190d7e701118a3"
+            ],
+            [
+                "3e6b105a7d79bf26"
+            ]
+        ]
+    },
+    {
+        "id": "3e6b105a7d79bf26",
+        "type": "http response",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1770,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "df190d7e701118a3",
+        "type": "http request",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://sandbox.api.visa.com/pav/v1/cardvalidation",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1110,
+        "y": 540,
+        "wires": [
+            [
+                "330fc20dd2c22797"
+            ]
+        ]
+    },
+    {
+        "id": "330fc20dd2c22797",
+        "type": "switch",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "property": "payload.responseStatus.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1410,
+        "y": 800,
+        "wires": [
+            [
+                "79a13c83950b1518"
+            ],
+            [
+                "3e6b105a7d79bf26"
+            ]
+        ]
+    },
+    {
+        "id": "79a13c83950b1518",
+        "type": "http request",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://sandbox.api.visa.com/visadirect/fundstransfer/v1/pullfundstransactions",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1690,
+        "y": 560,
+        "wires": [
+            [
+                "aa86e52683c4276e"
+            ]
+        ]
+    },
+    {
+        "id": "aa86e52683c4276e",
+        "type": "switch",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "property": "payload.responseStatus.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1730,
+        "y": 800,
+        "wires": [
+            [
+                "28bd6bbfef54d5b2"
+            ],
+            [
+                "3e6b105a7d79bf26"
+            ]
+        ]
+    },
+    {
+        "id": "28bd6bbfef54d5b2",
+        "type": "http request",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://sandbox.api.visa.com/visadirect/fundstransfer/v1/pushfundstransactions",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2110,
+        "y": 760,
+        "wires": [
+            [
+                "6b434410a492ebeb"
+            ]
+        ]
+    },
+    {
+        "id": "6b434410a492ebeb",
+        "type": "switch",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "property": "payload.responseStatus.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 2250,
+        "y": 900,
+        "wires": [
+            [
+                "d04770c34ab9a3b2"
+            ],
+            [
+                "3e6b105a7d79bf26"
+            ]
+        ]
+    },
+    {
+        "id": "d04770c34ab9a3b2",
+        "type": "http request",
+        "z": "89c232fd84c1a4fe",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://sandbox.api.visa.com/visadirect/fundstransfer/v1/reversefundstransactions",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 2430,
+        "y": 1000,
+        "wires": [
+            [
+                "3e6b105a7d79bf26"
+            ]
+        ]
+    }
+]
