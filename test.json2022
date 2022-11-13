@@ -1,0 +1,581 @@
+[
+    {
+        "id": "891f4f48802ca35a",
+        "type": "tab",
+        "label": "Telegrambot",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "576ae8e187eddd3a",
+        "type": "telegram command",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "command": "/start",
+        "description": "",
+        "registercommand": false,
+        "language": "",
+        "scope": "default",
+        "bot": "d3e31480d56d364a",
+        "strict": false,
+        "hasresponse": true,
+        "useregex": false,
+        "removeregexcommand": false,
+        "outputs": 2,
+        "x": 150,
+        "y": 180,
+        "wires": [
+            [
+                "f831172a3f9f84b2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f831172a3f9f84b2",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "function 1",
+        "func": "if(global.get('STEP' + msg.payload.chatId)){\n    global.set('STEP' + msg.payload.chatId, 0)\n}\nmsg.payload.content = 'welcome in API VISA BOT 42flows.tech'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "cc6083ae5fd8d456"
+            ]
+        ]
+    },
+    {
+        "id": "cc6083ae5fd8d456",
+        "type": "telegram sender",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "bot": "d3e31480d56d364a",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 690,
+        "y": 160,
+        "wires": [
+            [
+                "c20058fc299b59e3"
+            ]
+        ]
+    },
+    {
+        "id": "c20058fc299b59e3",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "start process",
+        "func": "global.set('STEP'+msg.payload.chatId,1)\n\nmsg.payload.content = 'Please write your full alias'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 240,
+        "wires": [
+            [
+                "b4c2a6fea9bdb09e"
+            ]
+        ]
+    },
+    {
+        "id": "b4c2a6fea9bdb09e",
+        "type": "telegram sender",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "bot": "d3e31480d56d364a",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 990,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50660fbb5fe23445",
+        "type": "telegram receiver",
+        "z": "891f4f48802ca35a",
+        "name": "Process",
+        "bot": "d3e31480d56d364a",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 50,
+        "y": 520,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "6d66faa7d144f6c3",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "step getter",
+        "func": "const step = global.get('STEP' + msg.payload.chatId)\n\nif(!step) {\n    return msg\n}\n\nmsg.payload.step = step\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 500,
+        "wires": [
+            [
+                "dc48cb777e0c67f1"
+            ]
+        ]
+    },
+    {
+        "id": "dc48cb777e0c67f1",
+        "type": "switch",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "property": "payload.step",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "7",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "8",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 8,
+        "x": 490,
+        "y": 580,
+        "wires": [
+            [
+                "7554b0ea7c1c45f5"
+            ],
+            [
+                "7f020f63596841ab"
+            ],
+            [
+                "4da33cc9269549f9"
+            ],
+            [
+                "5b7a888c4ff74231"
+            ],
+            [
+                "ede5908e2a88c566"
+            ],
+            [
+                "8de66e707fa289f8"
+            ],
+            [
+                "b76d4ffb4cea592e"
+            ],
+            [
+                "36f45c831d6494ea"
+            ]
+        ]
+    },
+    {
+        "id": "7554b0ea7c1c45f5",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "set user alias",
+        "func": "const userInfo = {alias: msg.payload.content};\n\nglobal.set ('USER'+msg.payload.chatId,userInfo)\n\nmsg.payload.content = msg.payload.content +', thanks, the next step is your consent Date Time'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 360,
+        "wires": [
+            [
+                "3510eee7cd8d25db"
+            ]
+        ]
+    },
+    {
+        "id": "a5682025fb7828a2",
+        "type": "telegram sender",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "bot": "d3e31480d56d364a",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1450,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3510eee7cd8d25db",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "increment step",
+        "func": "const key = 'STEP' + msg.payload.chatId;\n\nconst step = global.get(key)\n\nglobal.set(key, step+1)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 640,
+        "wires": [
+            [
+                "a5682025fb7828a2"
+            ]
+        ]
+    },
+    {
+        "id": "d697c79db0fb651a",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "decrement step",
+        "func": "const key = 'STEP' + msg.payload.chatId;\n\nconst step = global.get(key)\n\nglobal.set(key, step-1)\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8de66e707fa289f8",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "set user fist name",
+        "func": "const user = global.get('USER'+msg.payload.chatId)\n\nconst userInfo = { ...user, recipientFirstName: msg.payload.content};\n\nglobal.set ('USER'+msg.payload.chatId,userInfo)\n\nmsg.payload.content =msg.payload.content+', thanks, the next step is receipt last name'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 560,
+        "wires": [
+            [
+                "3510eee7cd8d25db"
+            ]
+        ]
+    },
+    {
+        "id": "36f45c831d6494ea",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": " Primary Account Number",
+        "func": "const user = global.get('USER' + msg.payload.chatId)\n\nconst userInfo = { ...user, recipientPrimaryAccountNumber: msg.payload.content };\n\nglobal.set('USER' + msg.payload.chatId, userInfo)\n\nmsg.payload.content = msg.payload.content + ', thanks'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 640,
+        "wires": [
+            [
+                "a6f39991dbb9d6d0"
+            ]
+        ]
+    },
+    {
+        "id": "4da33cc9269549f9",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "country",
+        "func": "const user = global.get('USER' + msg.payload.chatId)\n\nconst userInfo = { ...user, country: msg.payload.content };\n\nglobal.set('USER' + msg.payload.chatId, userInfo)\n\nmsg.payload.content = msg.payload.content + ', thanks, the next step is receipt guid'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 440,
+        "wires": [
+            [
+                "3510eee7cd8d25db"
+            ]
+        ]
+    },
+    {
+        "id": "b76d4ffb4cea592e",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "set user last name",
+        "func": "const user = global.get('USER' + msg.payload.chatId)\n\nconst userInfo = { ...user, recipientlastnema: msg.payload.content };\n\nglobal.set('USER' + msg.payload.chatId, userInfo)\n\nmsg.payload.content = msg.payload.content + ', thanks, the next step is receipt Primary Account Number'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 600,
+        "wires": [
+            [
+                "3510eee7cd8d25db"
+            ]
+        ]
+    },
+    {
+        "id": "ede5908e2a88c566",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "issuer name",
+        "func": "const user = global.get('USER' + msg.payload.chatId)\n\nconst userInfo = { ...user, issuerName: msg.payload.content };\n\nglobal.set('USER' + msg.payload.chatId, userInfo)\n\nmsg.payload.content = msg.payload.content + ', thanks, the next step is receipt first name'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 520,
+        "wires": [
+            [
+                "3510eee7cd8d25db"
+            ]
+        ]
+    },
+    {
+        "id": "5b7a888c4ff74231",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "guid",
+        "func": "const user = global.get('USER' + msg.payload.chatId)\n\nconst userInfo = { ...user, guid: msg.payload.content };\n\nglobal.set('USER' + msg.payload.chatId, userInfo)\n\nmsg.payload.content = msg.payload.content + ', thanks, the next step is receipt issuer name'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 480,
+        "wires": [
+            [
+                "3510eee7cd8d25db"
+            ]
+        ]
+    },
+    {
+        "id": "7f020f63596841ab",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "consentDateTime",
+        "func": "const user = global.get('USER' + msg.payload.chatId)\n\nconst userInfo = { ...user, consentDateTime: msg.payload.content };\n\nglobal.set('USER' + msg.payload.chatId, userInfo)\n\nmsg.payload.content = msg.payload.content + ', thanks, the next step is receipt country'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 400,
+        "wires": [
+            [
+                "3510eee7cd8d25db"
+            ]
+        ]
+    },
+    {
+        "id": "69f33ed22125a1e7",
+        "type": "telegram receiver",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "bot": "d3e31480d56d364a",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "6d66faa7d144f6c3"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1fd707b30e94925b",
+        "type": "http request",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://sandbox.api.visa.com/visaaliasdirectory/v1/manage/createalias",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 950,
+        "y": 780,
+        "wires": [
+            [
+                "4cc0afbb8d95a6ce",
+                "abc183a1e0699da4"
+            ]
+        ]
+    },
+    {
+        "id": "a6f39991dbb9d6d0",
+        "type": "function",
+        "z": "891f4f48802ca35a",
+        "name": "function 2",
+        "func": "const data = global.get('USER'+msg.payload.chatId);\nreturn data;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 740,
+        "wires": [
+            [
+                "1fd707b30e94925b"
+            ]
+        ]
+    },
+    {
+        "id": "4cc0afbb8d95a6ce",
+        "type": "debug",
+        "z": "891f4f48802ca35a",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1080,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "5c6631e8bd859982",
+        "type": "telegram sender",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "bot": "d3e31480d56d364a",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1490,
+        "y": 880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "abc183a1e0699da4",
+        "type": "switch",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "property": "payload.responseStatus.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "200",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "200",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 1190,
+        "y": 800,
+        "wires": [
+            [
+                "f3f2a2eafefb66e7"
+            ],
+            [
+                "5c6631e8bd859982"
+            ]
+        ]
+    },
+    {
+        "id": "f3f2a2eafefb66e7",
+        "type": "http response",
+        "z": "891f4f48802ca35a",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1450,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "d3e31480d56d364a",
+        "type": "telegram bot",
+        "botname": "TrokhymenkoIbot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]
